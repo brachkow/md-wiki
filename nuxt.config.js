@@ -1,3 +1,4 @@
 export default {
-  modules: ["@nuxt/content"],
+  modules: ['@nuxt/content'],
+  buildModules: ['@nuxtjs/tailwindcss'],
 };

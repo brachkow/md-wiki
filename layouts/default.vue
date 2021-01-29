@@ -1,8 +1,9 @@
 <template>
-  <Nuxt />
+  <main class="container mx-auto">
+    <Nuxt />
+  </main>
 </template>
 
 <script>
-  import '@exampledev/new.css';
   export default {};
 </script>
