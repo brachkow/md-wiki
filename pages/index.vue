@@ -1,11 +1,24 @@
 <template>
-  <main>
-    <input type="text" v-model="search" placeholder="Поиск"/>
-    <ul>
-      <li v-for="(note, index) in notes" :key="index">
-        <a :href="note.path">{{ note.title }}</a>
-      </li>
-    </ul>
+  <main class="py-16">
+    <input
+      type="text"
+      v-model="search"
+      placeholder="Поиск"
+      class="rounded-4 bg-lightgray leading-1.5 px-8 w-full mb-8"
+    />
+    <div v-if="notes.length > 0">
+      <ul>
+        <li v-for="(note, index) in notes" :key="index">
+          -
+          <a
+            :href="note.path"
+            class="text-blue underline hover:text-red transition-colors"
+            >{{ note.title }}</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div v-else>Нет результатов</div>
   </main>
 </template>
 
