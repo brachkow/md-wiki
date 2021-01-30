@@ -56,9 +56,11 @@
       const notesWithTags = await this.$content().only(['tags']).fetch();
       const unsortedTags = [];
       notesWithTags.forEach((note) => {
-        note.tags.split(', ').forEach((tag) => {
-          unsortedTags.push(tag);
-        });
+        if (note.tags !== undefined) {
+          note.tags.split(', ').forEach((tag) => {
+            unsortedTags.push(tag);
+          });
+        }
       });
       const sortedTags = groupBy(unsortedTags, (tag) => tag);
 
