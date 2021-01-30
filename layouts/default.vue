@@ -1,9 +1,17 @@
 <template>
-  <main class="container mx-auto py-16 px-8">
-    <Nuxt />
-  </main>
+  <div class="container mx-auto py-16 px-8">
+    <Navbar class="mb-8"/>
+    <main>
+      <Nuxt />
+    </main>
+  </div>
 </template>
 
 <script>
-  export default {};
+  import Navbar from '../components/Navbar/Navbar.vue';
+  export default {
+    components: {
+      Navbar,
+    },
+  };
 </script>
