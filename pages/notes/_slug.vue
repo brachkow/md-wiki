@@ -8,7 +8,7 @@
 <script>
   export default {
     async asyncData({ $content, route }) {
-      const page = await $content(route.params.slug).fetch();
+      const page = await $content('notes/' + route.params.slug).fetch();
       return {
         page,
       };

@@ -43,20 +43,20 @@
       async search() {
         if (this.searchQuery === '') {
           if (this.selectedTags.length > 0) {
-            this.notes = await this.$content()
+            this.notes = await this.$content('notes')
               .where({ tags: { $contains: this.selectedTags } })
               .fetch();
           } else {
-            this.notes = await this.$content().fetch();
+            this.notes = await this.$content('notes').fetch();
           }
         } else {
           if (this.selectedTags.length > 0) {
-            this.notes = await this.$content()
+            this.notes = await this.$content('notes')
               .where({ tags: { $contains: this.selectedTags } })
               .search(this.searchQuery)
               .fetch();
           } else {
-            this.notes = await this.$content().search(this.searchQuery).fetch();
+            this.notes = await this.$content('notes').search(this.searchQuery).fetch();
           }
         }
       },

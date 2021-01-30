@@ -64,7 +64,7 @@
       };
     },
     async mounted() {
-      const notesWithTags = await this.$content().only(['tags']).fetch();
+      const notesWithTags = await this.$content('notes').only(['tags']).fetch();
       const unsortedTags = [];
       notesWithTags.forEach((note) => {
         if (note.tags !== undefined) {
