@@ -56,6 +56,10 @@ module.exports = {
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
     },
+    outline: {
+      none: 'none',
+      blue: '2px solid #0000ff',
+    },
     extend: {},
   },
   variants: {
