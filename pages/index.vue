@@ -9,10 +9,10 @@
       <ul>
         <li v-for="(note, index) in notes" :key="index">
           -
-          <router-link
+          <NuxtLink
             :to="note.path"
             class="text-blue underline hover:text-red transition-colors"
-            >{{ note.title }}</router-link
+            >{{ note.title }}</NuxtLink
           >
         </li>
       </ul>

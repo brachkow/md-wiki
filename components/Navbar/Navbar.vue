@@ -1,10 +1,10 @@
 <template>
   <nav class="flex justify-between leading-1.5 inline-block">
     <div>
-      <router-link
+      <NuxtLink
         to="/"
         class="text-blue underline hover:text-red transition-colors"
-        >Индекс</router-link
+        >Индекс</NuxtLink
       >
     </div>
     <!-- <div>
