@@ -55,6 +55,14 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
+      mono: ['JetBrains Mono', 'mono'],
+    },
+    fontSize: {
+      12: '12px',
+      16: '16px',
+      24: '24px',
+      32: '32px',
+    },
     screens: {
       sm: '640px',
       md: '768px',
