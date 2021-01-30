@@ -10,10 +10,10 @@
       <ul>
         <li v-for="(note, index) in notes" :key="index">
           -
-          <a
-            :href="note.path"
+          <router-link
+            :to="note.path"
             class="text-blue underline hover:text-red transition-colors"
-            >{{ note.title }}</a
+            >{{ note.title }}</router-link
           >
         </li>
       </ul>
