@@ -25,6 +25,11 @@
   import Search from '../components/Search/Search.vue';
   import TagFilter from '../components/TagFilter/TagFilter.vue';
   export default {
+    head() {
+      return {
+        title: 'Индекс',
+      };
+    },
     data() {
       return {
         notes: [],

@@ -1,16 +1,21 @@
 <template>
   <article>
-    <h1>{{ page.title }}</h1>
-    <nuxt-content :document="page" />
+    <h1>{{ note.title }}</h1>
+    <nuxt-content :document="note" />
   </article>
 </template>
 
 <script>
   export default {
-    async asyncData({ $content, route }) {
-      const page = await $content('notes/' + route.params.slug).fetch();
+    head() {
       return {
-        page,
+        title: this.note.title,
+      };
+    },
+    async asyncData({ $content, route }) {
+      const note = await $content('notes/' + route.params.slug).fetch();
+      return {
+        note,
       };
     },
   };
