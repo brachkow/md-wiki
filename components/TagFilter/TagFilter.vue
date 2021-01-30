@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap" v-if="Object.keys(tags).length > 0">
-    <span v-for="(tag, index) in Object.keys(tags)" :key="index">
+    <span v-for="(tag, index) in Object.keys(tags).sort()" :key="index">
       <input
         :id="`tag-${index}-${componentId}`"
         type="checkbox"
@@ -14,7 +14,7 @@
           'bg-blue text-white': tags[tag].selected === true,
           'bg-lightgray hover:bg-darkgray': tags[tag].selected === false,
         }"
-        ># {{ tag }} ({{ tags[tag].count }})
+        >{{ formatter(tag, tags[tag].count) }}
       </label>
     </span>
   </div>
@@ -44,6 +44,17 @@
     watch: {
       selectedTags() {
         this.$emit('change', this.selectedTags);
+      },
+    },
+    methods: {
+      formatter(tag, count) {
+        let string;
+        if (count > 1) {
+          string = `# ${tag} (${count})`;
+        } else {
+          string = `# ${tag}`;
+        }
+        return string;
       },
     },
     data() {
