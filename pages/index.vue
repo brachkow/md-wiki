@@ -1,5 +1,5 @@
 <template>
-  <main class="py-16 px-8">
+  <main>
     <Search v-model="searchQuery" class="mb-8" />
     <TagFilter
       class="mt-8 mb-4"

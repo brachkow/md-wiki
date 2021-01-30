@@ -1,5 +1,5 @@
 <template>
-  <main class="container mx-auto">
+  <main class="container mx-auto py-16 px-8">
     <Nuxt />
   </main>
 </template>

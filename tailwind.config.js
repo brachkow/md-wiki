@@ -55,6 +55,10 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
     },
     outline: {
       none: 'none',
