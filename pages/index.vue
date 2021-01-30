@@ -1,11 +1,6 @@
 <template>
-  <main class="py-16">
-    <input
-      type="text"
-      v-model="searchQuery"
-      placeholder="Поиск"
-      class="rounded-4 bg-lightgray leading-1.5 px-8 w-full mb-8"
-    />
+  <main class="py-16 px-8">
+    <Search v-model="searchQuery" class="mb-8"/>
     <div class="mt-8 mb-4 flex flex-wrap" v-if="Object.keys(tags).length > 0">
       <span v-for="(tag, index) in Object.keys(tags)" :key="index">
         <input
@@ -49,6 +44,7 @@
 
 <script>
   import groupBy from '../node_modules/lodash-es/groupBy';
+  import Search from '../components/Search/Search.vue';
   export default {
     data() {
       return {
@@ -56,6 +52,9 @@
         tags: [],
         searchQuery: '',
       };
+    },
+    components: {
+      Search,
     },
     computed: {
       selectedTags() {
