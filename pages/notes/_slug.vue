@@ -12,12 +12,25 @@
           >
         </div>
       </header>
+      <ToC :toc="note.toc" class="mb-16" v-if="note.toc.length > 0" />
       <nuxt-content :document="note" />
     </article>
+    <RelatedList
+      :currentTitle="note.title"
+      :selectedTags="[...note.tags]"
+      v-if="note.tags !== undefined"
+    />
+  </div>
 </template>
 
 <script>
+  import RelatedList from '~/components/RelatedList/RelatedList.vue';
+  import ToC from '~/components/ToC/ToC.vue';
   export default {
+    components: {
+      RelatedList,
+      ToC,
+    },
     head() {
       return {
         title: this.note.title,
@@ -73,5 +86,8 @@
   }
   .nuxt-content *:not(pre) > code {
     @apply bg-lightgray rounded-4 px-4 font-mono;
+  }
+  .nuxt-content blockquote {
+    @apply italic;
   }
 </style>

@@ -1,18 +1,25 @@
 <template>
   <nav class="flex justify-between leading-1.5 inline-block">
     <div>
-      <NuxtLink
-        to="/"
-        class="text-blue underline hover:text-red transition-colors"
-        >Индекс</NuxtLink
-      >
+      <NuxtLink to="/" :class="`${styles.link}`">Индекс</NuxtLink>
     </div>
     <!-- <div>
       <router-link
         to="settings"
-        class="text-blue underline hover:text-red transition-colors"
+        :class="`${styles.link}`"
         >Настройки</router-link
       >
     </div> -->
   </nav>
 </template>
+
+<script>
+  import styles from '~/styles/styles.js';
+  export default {
+    data() {
+      return {
+        styles,
+      };
+    },
+  };
+</script>
