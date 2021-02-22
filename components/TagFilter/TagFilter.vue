@@ -50,9 +50,9 @@
       formatter(tag, count) {
         let string;
         if (count > 1) {
-          string = `# ${tag} (${count})`;
+          string = `${tag} (${count})`;
         } else {
-          string = `# ${tag}`;
+          string = `${tag}`;
         }
         return string;
       },
