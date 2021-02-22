@@ -81,6 +81,9 @@
     /*counter-increment: ol;*/
     /*content: counters(ol, '.') '. ';*/
   }
+  .nuxt-content li > p {
+    display: initial;
+  }
   .nuxt-content-editor {
     @apply font-mono;
   }
