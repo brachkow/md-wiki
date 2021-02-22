@@ -59,8 +59,5 @@
         this.search();
       },
     },
-    mounted() {
-      console.log(styles.link);
-    },
   };
 </script>
